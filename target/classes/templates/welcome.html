@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Employee Portal</title>
+    <link rel="icon" href="favicon_io/android-chrome.png" type="image/x-icon">
+    <link rel="stylesheet" href="welcome_style.css">
+    <link rel="stylesheet" href="Css/welcome_employee_style.css"> 
+</head>
+<style>
+    .navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-link:hover {
+    background-color: #555;
+}
+</style>
+<body>
+    <nav class="navbar">
+        <a href="/welcome" class="navbar-link">Dashboard</a>
+        <a href="/welcome" class="navbar-link">Tasks</a>
+        <a href="/welcome" class="navbar-link">Profile</a>
+    </nav>
+    <div class="container">
+        <div class="user-info">
+            <img src="Emp_Pro/tushar.jpeg" alt="User Avatar" id="user-avatar">
+            <h2 id="greeting" th:text="'Welcome, ' + ${employeeName} + '!'"></h2>
+            <div class="employee-stats">
+                <p>Projects Completed: 20</p>
+                <p>Years of Service: 5</p>
+            </div>
+        </div>
+
+        <form th:action="@{/logout}" method="GET">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Truly Open, Truly Trusted. This is NEC</p>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+        <p>Made with ☕ and ❤️ by <span style="color: #007bff; font-weight: bold;">Tushar Chauhan</span></p>
+    </footer>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hour = new Date().getHours();
+        let greeting;
+
+        if (hour >= 5 && hour < 12) {
+            greeting = 'Good Morning';
+        } else if (hour >= 12 && hour < 18) {
+            greeting = 'Good Afternoon';
+        } else {
+            greeting = 'Good Evening';
+        }
+
+        const employeeName = Tushar /* Add logic to get employee name */
+        document.getElementById('greeting').innerText = `${greeting}, ${employeeName}!`;
+    });
+</script>
+
+
+</html>

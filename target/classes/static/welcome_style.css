@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 40px auto; 
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.employee-stats {
+    margin-top: 20px;
+}
+
+.portal-features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.feature-card {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.user-info img {
+    border-radius: 50%;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px;
+    object-fit: cover;
+}
+
+.user-info h2 {
+    margin-top: 10px;
+}
+
+#user-avatar {
+    border-radius: 50%;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px;
+    object-fit: cover;
+    background-color: #ddd; /* Light gray background */
+    padding: 10px; /* Add some padding */
+}

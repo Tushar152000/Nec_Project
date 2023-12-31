@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-image: url("your-background-image.jpg"); 
+}
+
+header, nav, footer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+footer {
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+header {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav {
+    top: 5px;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: rgb(243, 238, 238);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #436ae7;
+}
+
+nav a.active {
+    background-color: #436ae7;
+}
+
+#player {
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container h1 {
+    color: #436ae7;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+button,textarea{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 18px);
+    transition: border-color 0.3s;
+}
+
+
+
+input:hover,
+button:hover {
+    border-color: #436ae7;
+}
+
+button {
+    background-color: #436ae7;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #2e4da7;
+}

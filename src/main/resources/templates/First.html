@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="first.css">
+    <link rel="icon" href="favicon_io/android-chrome.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script defer src="https://www.youtube.com/iframe_api"></script>
+
+</head>
+
+<body>
+    <div id="player"></div>
+
+    <header>
+        <h1 id="companyName">NEC Employee Management System</h1>
+    </header>
+
+    <nav>
+        <a href="#" class="active">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="/EmployeeLogin.html">Employee Login</a>
+        <a href="/admin.html">Admin Login</a>
+    </nav>
+
+    <footer>
+        <p>Truly Open, Truly Trusted. This is NEC</p>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+        <p>Made with ☕ and ❤️ by <span style="color: #007bff; font-weight: bold;">Tushar Chauhan</span></p>
+    </footer>
+
+    <script>
+        // Add animations using anime.js
+        anime({
+            targets: '#companyName',
+            opacity: 1,
+            translateY: 0,
+            duration: 1000,
+            easing: 'easeInOutQuad',
+            delay: anime.stagger(100),
+        });
+
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'dm8_zzLjGlo',
+                playerVars: {
+                    autoplay: 1,
+                    controls: 0,
+                    modestbranding: 1,
+                    loop: 1,
+                    showinfo: 0,
+                    mute: 1,
+                    fs: 0,
+                    cc_load_policy: 0,
+                    iv_load_policy: 3,
+                    autohide: 0
+                },
+                events: {
+                    onReady: function (event) {
+                        event.target.mute();
+                        event.target.playVideo();
+                    },
+                    onStateChange: function (event) {
+                        if (event.data === YT.PlayerState.ENDED) {
+                            player.seekTo(0);
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

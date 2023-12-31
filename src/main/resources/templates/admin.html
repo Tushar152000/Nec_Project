@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="icon" href="favicon_io/android-chrome.png" type="image/x-icon">
+    <link rel="stylesheet" href="adminStyle.css">
+</head>
+
+<body>
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+     </div>
+    <nav>
+        <a href="/First.html">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="/EmployeeLogin.html">Employee Login</a>
+        <a href="#" class="active">Admin Login</a>
+    </nav>
+    <div th:if="${errorMsg}" class="alert alert-danger">
+        <p th:text="${errorMsg}"></p>
+    </div>
+
+    <div class="container">
+        <h2>Admin Login</h2>
+        <form th:action="@{/admin-login}" th:object="${admin}" method="POST">
+            <label for="adminUsername">Username:</label>
+            <input type="text" id="adminUsername" name="username" placeholder="Username" required>
+    
+            <label for="adminPassword">Password:</label>
+            <input type="password" id="adminPassword" name="password" placeholder="Password" required>
+            <div th:if="${errorMsg}" class="alert alert-danger">
+                <p th:text="${errorMsg}"></p>
+            </div>
+    
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    <footer>
+        <p>Truly Open, Truly Trusted. This is NEC</p>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+        <p>Made with ☕ and ❤️ by <span style="color: #007bff; font-weight: bold;">Tushar Chauhan</span></p>
+    </footer>
+
+</body>
+
+</html>
